@@ -1,0 +1,9 @@
+gym
+gym-bfw
+opencv-python
+ptan
+tensorboard
+tensorboardX
+tensorflow
+torch
+matplotlib
