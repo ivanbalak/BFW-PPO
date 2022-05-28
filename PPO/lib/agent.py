@@ -1,7 +1,9 @@
 
 import numpy as np
-import ActorNetwork, PPOMemory, CriticNetwork
+from lib import actorNetwork, criticNetwork, ppoMemory
 import torch as T
+
+
 
 
 
@@ -14,9 +16,9 @@ class Agent:
         self.n_epochs = n_epochs
         self.gae_lambda = gae_lambda
 
-        self.actor = ActorNetwork(n_actions, input_dims, alpha)
-        self.critic = CriticNetwork(input_dims, alpha)
-        self.memory = PPOMemory(batch_size)
+        self.actor = actorNetwork.ActorNetwork(n_actions, input_dims, alpha)
+        self.critic = criticNetwork.CriticNetwork(input_dims, alpha)
+        self.memory = ppoMemory.PPOMemory(batch_size)
         self.writer=writer
         self.j=0
         self.c1 = c1

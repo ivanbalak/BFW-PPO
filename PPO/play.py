@@ -5,7 +5,8 @@ import argparse
 import numpy as np
 import torch as T
 from torch.distributions.categorical import Categorical
-from lib import utils, wrappers, ActorNetwork
+from lib import actorNetwork
+from lib import utils, wrappers
 
 from tensorboardX import SummaryWriter
 
@@ -17,7 +18,7 @@ if __name__ == '__main__':
     writer = SummaryWriter()
     n_actions=env.action_space.n
     input_dims=env.observation_space.shape
-    actor=ActorNetwork(n_actions,  input_dims, alpha)
+    actor=actorNetwork.ActorNetwork(n_actions,  input_dims, alpha)
     actor.load_checkpoint()
     actor.eval()
     observation = env.reset()

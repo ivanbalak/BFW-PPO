@@ -1,5 +1,6 @@
 import collections
-from lib import utils, wrappers, Agent
+from lib import agent
+from lib import utils, wrappers
 import gym.spaces
 import numpy as np
 import torch as T
@@ -22,7 +23,7 @@ if __name__ == '__main__':
     c2 = 0.01
     writer = SummaryWriter()
 
-    agent = Agent(writer,n_actions=env.action_space.n, batch_size=batch_size,  
+    agent = agent.Agent(writer,n_actions=env.action_space.n, batch_size=batch_size,  
                     alpha=alpha, n_epochs=n_epochs, 
                     input_dims=env.observation_space.shape, policy_clip=policy_clip, c1 = c1, c2 = c2)
     #agent.actor.load_checkpoint()
