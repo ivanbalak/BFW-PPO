@@ -7,22 +7,37 @@ Dominik implemented the communication between Python and Lua by having The Lua c
 
 ##Development and Testing Environment Setup under Windows
 Install Windows Services for Linux from Windows command prompt with elevated privileges
+
 ```wsl --install```
+
 Start Ubuntu app from Windows start menu, create a user account. After logging into Linux, clone BFW-PPO project
+
 ```git clone https://github.com/ivanbalak/BFW-PPO.git```
+
 Start Visual Studio Code in Linux environment from the project folder, then continue with section
+
 ``` cd bff-ppo ```
 ``` code .  ```
+
 ##Linux Environment Setup
 Install Battle for Wesnoth
+
 ```sudo apt-get install wesnoth```
+
 If the project is not yet cloned in previous steps, clone BFW-PPO project
+
 ```git clone https://github.com/ivanbalak/BFW-PPO.git```
+
 Copy Bfw-gym add-on to wesnoth add-on folder
+
 ```cp PythonAddon ~/.config/wesnoth-1.14/data/add-ons```
+
 Create a folder for input files for use by BFW gym
+
 ```mkdir ~/.config/wesnoth-1.14/data/input```
+
 Configure Python environment and project dependencies. The project was tested with Python 3.8, but it can be compatible with later versions of Python. Below is the command sequence specific to Python 3.8: 
+
 ```python3.8 -m venv env ```
 ```source env/bin/activate```
 ```pip install -U pip wheel setuptools```
@@ -33,16 +48,25 @@ Configure Python environment and project dependencies. The project was tested wi
 The PPO AI for the BFW was designed and tested in the Windows Services for Linux environment with Ubuntu Linux distribution. The software should also function in a standalone Linux computer. The software can be launched from the Linux prompt and from the Visual Studio Code Integrated Development Environment.
 
 In Linux prompt, change the current directory to BFW PPO project directory, for example
+
 ```cd ~/bfd-ppo```
+
 Command to start training
+
 ```python PPO/train.py```
+
 Display usage and optional training command arguments help screen
+
 ```train.py [-h]``
 
 ##Operation from VS Code IDE
 In WSL Linux prompt, change the current directory to BFW PPO project directory, for example
+
 ```cd ~/bfd-ppo```
+
 Start VS Code IDE
+
 ``` code .```
-pen Run Debug panel - type Ctrl-Shift-D or click Run & Debug button. to start training, select [PPO train single player] from the drop-down menu and click the
+
+open Run Debug panel - type Ctrl-Shift-D or click Run & Debug button. to start training, select [PPO train single player] from the drop-down menu and click the
 green arrow next to it.
