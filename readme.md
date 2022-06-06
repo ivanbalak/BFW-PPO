@@ -5,7 +5,7 @@ The [GYM environment](gym-bfw)  used to connect Wesnoth to the BFW-PPO script wa
 
 Dominik implemented the communication between Python and Lua by having The Lua code return data (mostly the observation data of the environment) through the standard output on the console. This output is then sent to Python as a standard GYM environment. When actions are taken by the agent this is again written to a Lua file located in the Wesnoth Addon where the action is taken in the game.
 
-##Development and Testing Environment Setup under Windows
+## Development and Testing Environment Setup under Windows
 Install Windows Services for Linux from Windows command prompt with elevated privileges
 
 ```wsl --install```
@@ -17,9 +17,10 @@ Start Ubuntu app from Windows start menu, create a user account. After logging i
 Start Visual Studio Code in Linux environment from the project folder, then continue with section
 
 ``` cd bff-ppo ```
+
 ``` code .  ```
 
-##Linux Environment Setup
+## Linux Environment Setup
 Install Battle for Wesnoth
 
 ```sudo apt-get install wesnoth```
@@ -59,7 +60,7 @@ Display usage and optional training command arguments help screen
 
 ```train.py [-h]``
 
-##Operation from VS Code IDE
+## Operation from VS Code IDE
 In WSL Linux prompt, change the current directory to BFW PPO project directory, for example
 
 ```cd ~/bfd-ppo```
