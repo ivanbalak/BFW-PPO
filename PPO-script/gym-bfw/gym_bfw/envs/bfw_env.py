@@ -1,3 +1,13 @@
+"""
+
+Gym-bfw 
+contains the 
+Action space
+Observation space
+and Reward
+
+"""
+
 import os
 import sys
 import shutil

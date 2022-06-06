@@ -1,3 +1,7 @@
+"""
+Game state file
+
+"""
 import numpy as np
 
 class GameState:

@@ -1,3 +1,8 @@
+"""
+Input file
+
+"""
+
 import re
 import numpy as np
 import logging

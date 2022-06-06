@@ -1,3 +1,10 @@
+"""
+
+Batch-memory
+
+"""
+
+
 import numpy as np
 
 class PPOMemory:

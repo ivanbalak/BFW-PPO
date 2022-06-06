@@ -1,4 +1,8 @@
+"""
 
+LSTM Agent
+
+"""
 import os
 import numpy as np
 from lib.ppoMemory import PPOMemory

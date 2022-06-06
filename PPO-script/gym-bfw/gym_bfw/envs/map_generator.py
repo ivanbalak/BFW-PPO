@@ -1,3 +1,8 @@
+"""
+Map generaton
+
+"""
+
 ### example map ###
 # Gg, Gg, Gg, Gg, Gg, Gg, Gg, Gg, Gg, Gg, Gg, Gg
 # Gg, Gg, Gg, Gg, Gg, Gg, Gg, Gg, Gg, Gg, Gg^Ve, Gg
