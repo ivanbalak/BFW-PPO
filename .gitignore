@@ -126,3 +126,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+/runs/*
+/nets/*
+/maps/*
+*/runs/*
+*/nets/*
+*/maps/*
+tmp/
+
+!runs/README.md
+!nets/README.md
+!maps/README.md
+
+!02_rainbow_dqn/runs/*

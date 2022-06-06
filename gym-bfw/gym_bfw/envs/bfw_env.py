@@ -45,6 +45,7 @@ class BfwEnv(gym.Env):
         self.step_n = 0
         self.wesnoth_userdata_path = self._get_userdata_path()
         self.last_observation = None
+        self.usemap = None
 
         # if reset() is always called before using this environment, we dont need the game start here already
         # self._start_game()
@@ -66,6 +67,14 @@ class BfwEnv(gym.Env):
         self.map_rotation = 0
         if 'rotation' in kwargs and kwargs.get('rotation'):
             self.map_rotation = kwargs.get('rotation')
+
+        self.mutations = 0
+        if 'mutations' in kwargs and kwargs.get('mutations'):
+            self.mutations = kwargs.get('mutations')
+        
+        if 'map' in kwargs and kwargs.get('map'):
+            self.usemap = kwargs.get('map')
+
 
     def __del__(self):
         self._end_game()
@@ -272,18 +281,23 @@ class BfwEnv(gym.Env):
     # resuing is much more efficient, cause only the scenario has to be reload and not the entire process restarted
     # the game process is successfully set up, if the communication over stdout and lua file is established
     def _start_game(self):
-        self._generate_new_map()
-
+        if self.usemap == None:
+            self._generate_new_map()
+        else:
+            self._copy_file(self.usemap, self.wesnoth_userdata_path + "/data/add-ons/PythonAddon/maps/test_mini.map")
         start = timer()
         self._remove_lua_file()
 
         while True:
             if self.game_process is None or self.game_process.poll() is not None:
-                process_args = ["wesnoth", "--multiplayer", "--exit-at-end", "--multiplayer-repeat", str(1000000), "--scenario", self.scenario]
+                process_args = ["wesnoth", "--multiplayer", "--scenario", self.scenario]
+                if self.map_variations > 0:
+                    process_args.insert(2,str(self.map_variations))
+                    process_args.insert(2,"--multiplayer-repeat")
                 if self.no_gui:
                     process_args.insert(1, "--nogui")
                     process_args.insert(2, "--nosound")
-
+                print(process_args)
                 self.game_process = subprocess.Popen(process_args, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
 
             self.lua_input_file = self._create_action_input_lua_file()
@@ -333,7 +347,7 @@ class BfwEnv(gym.Env):
                 self.map = map_generator.generate_mirror(10, 10, 8)
                 self._write_map_to_file()
             elif self.reset_count % self.map_variations == 0:
-                self.map = map_generator.mutate_map(self.map, 1)
+                self.map = map_generator.mutate_map(self.map, self.mutations)
                 self._write_map_to_file()
         
     def _write_map_to_file(self):
