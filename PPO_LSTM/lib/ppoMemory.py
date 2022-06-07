@@ -16,7 +16,7 @@ class PPOMemory:
         n_states = len(self.states)
         batch_start = np.arange(0, n_states, self.mini_batch_size)
         indices = np.arange(n_states, dtype=np.int64)
-        np.random.shuffle(indices)
+        #mnp.random.shuffle(indices)
         batches = [indices[i:i+self.mini_batch_size] for i in batch_start]
 
         return np.array(self.states),\
