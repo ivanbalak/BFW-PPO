@@ -131,7 +131,7 @@ dmypy.json
 /maps/*
 
 */maps/*
-tmp/
+
 
 !runs/README.md
 !nets/README.md
