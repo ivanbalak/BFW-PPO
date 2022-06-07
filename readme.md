@@ -19,7 +19,7 @@ Start Ubuntu app from Windows start menu, create a user account. After logging i
 
 Start Visual Studio Code in Linux environment from the project folder, then continue with section
 
-``` cd bff-ppo ```
+``` cd BFW-PPO ```
 
 ``` code .  ```
 
@@ -58,7 +58,7 @@ The PPO AI for the BFW was designed and tested in the Windows Services for Linux
 
 In Linux prompt, change the current directory to BFW PPO project directory, for example
 
-```cd ~/bfd-ppo```
+```cd ~/BFW-PPO```
 
 Command to start training
 
@@ -71,7 +71,7 @@ Display usage and optional training command arguments help screen
 ## Operation from VS Code IDE
 In WSL Linux prompt, change the current directory to BFW PPO project directory, for example
 
-```cd ~/bfd-ppo```
+```cd ~/BFW-PPO```
 
 Start VS Code IDE
 
