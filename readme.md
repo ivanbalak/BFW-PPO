@@ -43,10 +43,15 @@ Create a folder for input files for use by BFW gym
 Configure Python environment and project dependencies. The project was tested with Python 3.8, but it can be compatible with later versions of Python. Below is the command sequence specific to Python 3.8: 
 
 ```python3.8 -m venv env ```
+
 ```source env/bin/activate```
+
 ```pip install -U pip wheel setuptools```
+
 ```pip3 install -e ./gym-bfw```
+
 ```pip3 install -r requirements.txt ```
+
 
 # General Operating Considerations
 The PPO AI for the BFW was designed and tested in the Windows Services for Linux environment with Ubuntu Linux distribution. The software should also function in a standalone Linux computer. The software can be launched from the Linux prompt and from the Visual Studio Code Integrated Development Environment.
