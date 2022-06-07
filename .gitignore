@@ -127,11 +127,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-/runs/*
-/nets/*
+
 /maps/*
-*/runs/*
-*/nets/*
+
 */maps/*
 tmp/
 
