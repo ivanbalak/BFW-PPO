@@ -43,7 +43,7 @@ if __name__ == '__main__':
     start_time = time.time()
     num_updates = args.total_timesteps // args.batch_size
     #load game gym
-    env = wrappers.make_env(args.gym_id, gui=args.showgui, scenario="side2_pass_3units", variations=args.variations, mutations = args.mutations, rotation=args.rotation, map = 'maps/Jun04_06-36-00.map')
+    env = wrappers.make_env(args.gym_id, gui=args.showgui, scenario="side2_pass_3units", variations=args.variations, mutations = args.mutations, rotation=args.rotation, map = args.map)
     
     # init indicators
     best_score = env.reward_range[0]
